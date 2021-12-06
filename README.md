@@ -9,7 +9,7 @@ Run:
   - npm run dev
 Localhost: 
   - http://localhost:3000/
-  - 
+  
 Dependencias:
     - "@nuxtjs/axios": "^5.13.6"
     - "core-js": "^3.15.1"
