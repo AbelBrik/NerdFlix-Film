@@ -6,12 +6,12 @@
       <!-- Filtro -->
       <div>
         <h3>Busca la película por su titulo</h3>
-        <input type="search" minlength="3" id="search" placeholder="Introduce una sola palabra con más de 3 caracteres" @keyup="filterFilms(searchText)" @ v-model="searchText">
+        <input type="search" minlength="3" id="search" placeholder="Introduce una sola palabra con más de 3 caracteres" @keyup="filterFilms(searchText)" v-model="searchText">
         <h4 class="infoSearch">{{message}}</h4>
         <h4 v-if="numberFilms>0" class="infoSearch">Películas encontradas: {{numberFilms}}</h4>
       </div>
 
-    <!-- Pelis -->
+      <!-- Pelis -->
       <div id="collectionFilms">
         <article id="filmCard" v-for="(film, index) in films" :key="index" >
           <img class="img" :src="`${film.Poster}`" onerror="this.onerror=null;this.src='https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg'">
@@ -52,7 +52,7 @@ export default{
     response.data.Search.forEach(element => this.films.push(element))
   },
   methods: {
-    async filterFilms(value) {
+    async filterFilms(value){
       this.reset()
       if(!value || value ===" "){
         this.message = "No utilice espacios"
